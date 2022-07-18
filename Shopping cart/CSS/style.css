@@ -1,0 +1,259 @@
+/* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Rubik&display=swap');
+
+/* VARIABLES */
+:root {
+	--bg-color: #fff;
+	--link-color: #000;
+	--link-size: 1.1rem;
+	--right-side-bg-color: 81, 187, 254;
+}
+
+/* General CSS */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	font-family: Rubik;
+}
+
+html {
+	font-size: 16px;
+	overflow-x: hidden;
+}
+
+a {
+	text-decoration: none;
+	color: #000;
+}
+/* APP CONTAINER */
+.app-container {
+	width: 100vw;
+}
+
+/* NAVBAR */
+
+header {
+	position: fixed;
+	width: 100%;
+	z-index: 1000;
+}
+
+/* APP BG */
+.app-bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	z-index: -1;
+}
+.app-bg .left-side {
+	background-color: rgb(255, 255, 255);
+	width: 75%;
+	height: 100%;
+}
+.app-bg .right-side {
+	background-color: rgb(var(--right-side-bg-color));
+	width: 25%;
+	height: 100%;
+}
+
+/* products list */
+.products-list {
+	width: 100vw;
+	height: 100vh;
+
+	padding-top: 57px;
+
+	display: flex;
+}
+
+/* PRODUCTS */
+.products {
+	height: 100%;
+	width: 75%;
+
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: repeat(3, 3fr);
+}
+
+.products .item .item-container {
+	width: 240px;
+	height: 100%;
+
+	margin: auto;
+	position: relative;
+}
+
+.products .item .item-container .add-to-cart {
+	background-color: rgba(var(--right-side-bg-color), 1);
+	/* background-color: rgb(242, 255, 58); */
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: absolute;
+	top: 10px;
+	right: -20px;
+
+	padding: 5px;
+
+	border-radius: 50%;
+
+	cursor: pointer;
+}
+
+.products .item .item-container .add-to-wishlist {
+	background-color: yellow;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	position: absolute;
+	top: 10px;
+	right: 30px;
+
+	padding: 5px;
+
+	border-radius: 50%;
+
+	cursor: pointer;
+}
+
+.products .item .item-container .add-to-cart img {
+	width: 32px;
+	height: 32px;
+}
+
+.products .item .item-container .add-to-wishlist img {
+	width: 32px;
+	height: 32px;
+
+	padding: 5px;
+}
+
+/* CART */
+.cart {
+	height: 90%;
+	width: 25%;
+	position: fixed;
+	right: 0;
+}
+
+/* cart header */
+.cart-header {
+	display: flex;
+	justify-content: space-around;
+	padding: 10px 0;
+}
+.cart-header div {
+	padding: 5px;
+	border-radius: 5px;
+	background-color: rgba(255, 255, 0, 0.9);
+}
+/* cart items */
+.cart-items {
+	max-height: calc(100vh - 247px);
+	overflow-y: auto;
+	overflow-x: hidden;
+}
+/* cart item */
+.cart-item {
+	display: flex;
+	justify-content: space-around;
+	padding: 10px 0;
+}
+.cart-item div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* item info */
+.cart-item .item-info {
+	flex: 1;
+	background-color: rgba(255, 255, 255, 0.6);
+
+	border-radius: 0 10px 10px 0;
+
+	padding: 10px;
+}
+.cart-item .item-info:hover {
+	background-color: rgba(255, 0, 0, 0.6);
+	cursor: pointer;
+}
+.cart-item .item-info img {
+	width: 75px;
+}
+
+/* unit price */
+.cart-item .unit-price {
+	flex: 1;
+	font-size: 1.2rem;
+}
+
+/* units */
+.cart-item .units {
+	flex: 1;
+}
+.cart-item .units .number {
+	margin: 0 10px;
+
+	font-size: 1.2rem;
+}
+.cart-item .units .btn {
+	width: 20px;
+	height: 20px;
+	background-color: rgb(242, 255, 58);
+	border-radius: 50%;
+	font-weight: bold;
+	cursor: pointer;
+
+	/*	-webkit-user-select: none; /* Chrome all /		 Safari all */
+	/*	-moz-user-select: none; /* Firefox all */
+	/*	-ms-user-select: none; /* IE 10+ */
+}
+
+/* cart footer */
+.cart-footer {
+	width: 100%;
+	background-color: rgb(255, 21, 21);
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	border-left: 1px solid rgb(var(--right-side-bg-color));
+}
+.cart-footer div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 15px 0;
+	font-size: 1.3rem;
+}
+.cart-footer .subtotal {
+	background-color: #e3f2fd;
+}
+.cart-footer .checkout {
+	background-color: rgb(0, 0, 255);
+	color: white;
+	cursor: pointer;
+}
+.cart-footer .checkout:hover {
+	border: 2px solid yellow;
+	transition: 0.2s;
+}
+
+/* .mod {
+	filter: invert(30%) sepia(100%) saturate(6945%) hue-rotate(1deg)
+		brightness(106%) contrast(111%);
+} */
+.red {
+	/* background-color: red !important; */
+	filter: invert(30%) sepia(100%) saturate(6945%) hue-rotate(1deg)
+		brightness(106%) contrast(111%);
+}
