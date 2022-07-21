@@ -1,0 +1,41 @@
+ALGORITHM sentence
+VAR
+// if the sentence begin with ('.') minimum :   words equal 1 ,  characters equal 1  , vowel_letters equal 0  .
+    words : INTEGER := 1;   
+    characters :INTEGER := 0;
+    vowel_lettres :INTEGER :=0;
+    sentence : STRING;
+    cont :CHAR ; 
+    arr = [ ];
+    // split the sentence in  the array that will be CHAR by CHAR
+    arr = sentence.split('')
+
+BEGIN
+//read all the cont from array 
+    read(for cont in arr )
+
+    WHILE (cont <> '.') DO 
+    
+    IF (cont := ' ' ) THEN   // (' ') 1 space between 
+
+    words := words+1;
+    characters := characters+1;
+
+    ELSE_IF (cont in ['a','e','i','o','u','A','E','I','O','U'] ) THEN  
+
+    vowel_lettres:= vowel_lettres+1;
+    letters :=letters+1;
+
+    ELSE
+
+    letters:= letters+1;
+
+    END_IF     
+        
+    END_WHILE
+
+    read (words)
+    read (characters)
+    read(vowel_lettres)
+
+END 
