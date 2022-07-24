@@ -1,0 +1,167 @@
+//Problem 1 solution 1  array
+ALGORITHM compare_two_arrays
+
+VAR
+    arr1, arr2, arr3 : ARRAY_OF INTEGER[lenght];
+    i, j, sum : INTEGER := 0
+BEGIN
+    write ("give the first elements")
+    read (arr1)
+    write ("give the second element")
+    read (arr2)
+
+    FOR i FROM 0 TO arr1.length -1 DO
+        read(arr1[i]);
+    END_FOR  
+
+    FOR j FROM 0 TO arr2.length -1 DO
+        Read(arr2[j]);// insert from user
+    END_FOR
+
+    IF (arr1[i] <> arr2[j]) THEN // arr1=[2,5,12,7,2]      arr2[ 12, 0,7 3]
+    arr3 := push(arr1[i])
+    ELSE_IF (arr2[j] <> arr1[i]) THEN
+    arr3 := push(arr2[j])
+    ELSE
+    write("there are no unique numbers")
+    END_IF
+
+    IF (isEmpty(arr3) := false) THEN
+    FOR k FROM 0 TO arr3.length -1 DO  
+    Read(arr3[k]);// insert from user    => [2,5,0,3,2]  
+    END_FOR
+    END_IF
+
+
+    sum := sum+(pop(arr3[k]))  //sum = 2 +5 +0 +3 +2
+
+//Problem 1 solution 2 hash_table
+
+
+ALGORITHM compare_two_hash
+
+VAR 
+    arr1: HASH_TABLE<INTEGER,INTEGER>;
+    arr2: HASH_TABLE<INTEGER,INTEGER>;
+    arr3 : HASH_TABLE<INTEGER,INTEGER>.
+    htab : HASH_TABLE<CHAR,INTEGER>;
+
+    i: INTEGER
+    count: INTEGER :=0
+BEGIN
+    arr1 : HASH_TABLE<INTEGER,INTEGER>;
+    arr1.insert(number, number);
+    Write(arr1);
+    arr2 : HASH_TABLE<INTEGER,INTEGER>;
+    arr2.insert(number, number);
+    Write(arr2);
+
+    FOR key IN arr1 DO
+    Read(key, value);
+    END_FOR
+    FOR key IN arr2 DO
+    Read(key, value);
+    END_FOR
+    
+    IF  THEN
+    
+    ELSE 
+   END_IF
+
+IF (arr1[key[value]] <> arr2 [key[value]]) THEN
+    arr3.insert( arr1[key[value]] )
+ELSE_IF (arr2 [key[value]] <> arr1[key[value]]) THEN
+    arr3.insert( arr2[key[value]] )
+ELSE
+    write("there are no unique numbers")
+END_IF
+
+  FOR key IN arr3 DO
+   count := count + htab.insert(arr3[key[value]])
+END_FOR
+    
+
+    //Problem 2 solution 1  array
+ALGORITHM compare_two_arrays
+
+VAR
+    arr1, arr2, arr3 : ARRAY_OF INTEGER[lenght];
+    i, j, sum : INTEGER := 0
+BEGIN
+    write ("give the first elements")
+    read (arr1)
+    write ("give the second element")
+    read (arr2)
+
+    FOR i FROM 0 TO arr1.length -1 DO
+        read(arr1[i]);
+    END_FOR  
+
+    FOR j FROM 0 TO arr2.length -1 DO
+        Read(arr2[j]);// insert from user
+    END_FOR
+
+    IF (arr1[i] == arr2[j]) THEN // arr1=[2,5,12,7,2]      arr2[ 12, 0,7 3]
+    arr3 := push(arr1[i])
+    ELSE_IF (arr2[j] == arr1[i]) THEN
+    arr3 := push(arr2[j])
+    ELSE
+    write("there are no same numbers")
+    END_IF
+
+    IF (isEmpty(arr3) := false) THEN
+    FOR k FROM 0 TO arr3.length -1 DO  
+    Read(arr3[k]);// insert from user    => [2,5,0,3,2]  
+    END_FOR
+    END_IF
+
+
+    sum := sum+(pop(arr3[k]))  //sum = 2 +5 +0 +3 +2
+
+//Problem 2 solution 2 hash_table
+
+
+ALGORITHM compare_two_hash
+
+VAR 
+    arr1: HASH_TABLE<INTEGER,INTEGER>;
+    arr2: HASH_TABLE<INTEGER,INTEGER>;
+    arr3 : HASH_TABLE<INTEGER,INTEGER>.
+    htab : HASH_TABLE<CHAR,INTEGER>;
+
+    i: INTEGER
+    count: INTEGER :=0
+BEGIN
+    arr1 : HASH_TABLE<INTEGER,INTEGER>;
+    arr1.insert(number, number);
+    Write(arr1);
+    arr2 : HASH_TABLE<INTEGER,INTEGER>;
+    arr2.insert(number, number);
+    Write(arr2);
+
+    FOR key IN arr1 DO
+    Read(key, value);
+    END_FOR
+    FOR key IN arr2 DO
+    Read(key, value);
+    END_FOR
+    
+    IF  THEN
+    
+    ELSE 
+   END_IF
+
+IF (arr1[key[value]] == arr2 [key[value]]) THEN
+    arr3.insert( arr1[key[value]] )
+ELSE_IF (arr2 [key[value]] == arr1[key[value]]) THEN
+    arr3.insert( arr2[key[value]] )
+ELSE
+    write("there are no same numbers")
+END_IF
+
+  FOR key IN arr3 DO
+   count := count + htab.insert(arr3[key[value]])
+END_FOR
+
+
+    
