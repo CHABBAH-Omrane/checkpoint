@@ -1,0 +1,84 @@
+// procedure 
+PROCEDURE dot_product_proc(v1, v2  : ARRAY_OF FLOAT)
+VAR
+    PS :FLOAT :=0
+BEGIN
+    FOR i FROM 0 TO length(v1)-1  DO
+    read(v1[i])
+    read(v2[i])
+        ps := v1[i] * v2 [i]
+        read(ps)
+    END_FOR
+       
+END
+
+//pair vector pocudure
+
+     PROCEDURE pair_of_vector_proc (VAR n:INTEGER)
+    REPEAT
+    read(n);
+    UNTIL (n%2=0);
+    
+
+//algo 1
+
+    ALGORITHM Dot_Product_proc
+    VAR
+    v1:ARRAY_OF FLOAT[50]
+    v2:ARRAY_OF FLOAT[50]
+    ps : FLOAT
+    n :INTEGER 
+    BEGIN
+        read(v1)
+        read(v2)  
+    ps : =dot_product_proc(v1, v2)
+
+    IF ( ps = pair_of_vector_proc(n) ) THEN
+    write("two vectors are ortoghonals");
+    END_IF
+   
+    END
+
+//function 
+
+FUNCTION dot_product_func(v1, v2  : ARRAY_OF FLOAT)  :FLOAT
+VAR
+    PS :FLOAT :=0
+BEGIN
+    FOR i FROM 0 TO length(v1)-1  DO
+    read(v1[i])
+    read(v2[i])
+        ps := v1[i] * v2 [i]
+        read(ps)
+    END_FOR
+       return ps
+END
+
+
+//pair vector function 
+
+  FUNCTION  pair_of_vector_proc (VAR n:INTEGER)  : INTEGER
+    IF (n%2=0) THEN
+       return n
+    END_IF 
+
+ 
+
+
+//algo 2
+        ALGORITHM Dot_Product_func
+    VAR
+    v1:ARRAY_OF FLOAT[50]
+    v2:ARRAY_OF FLOAT[50]
+    ps : FLOAT
+    n :INTEGER 
+    BEGIN
+        read(v1)
+        read(v2)  
+    ps : =dot_product_func(v1, v2)
+
+    IF ( ps = pair_of_vector_func(n) ) THEN
+    write("two vectors are ortoghonals");
+    END_IF
+   return ps
+    END
