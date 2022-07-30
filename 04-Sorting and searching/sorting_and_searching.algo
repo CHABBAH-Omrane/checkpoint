@@ -1,0 +1,35 @@
+
+//[5,1,6,9,3,8,7]
+
+//[1,3,5,6,7,8,9]
+
+PROCEDURE swap(VAR xp:INTEGER,VAR yp:INTEGER)
+VAR
+    tmp : INTEGER;
+BEGIN
+    tmp:=xp;
+    xp:=yp;
+    yp:=tmp
+END
+
+
+
+GIN
+    n := tab.length;
+
+    FOR i FROM 0 TO n-1  DO
+        min_idx := i;
+        FOR j  FROM i  TO n-1   DO
+            IF (tab[j]<tab[min_idx]) THEN
+                min_idx := j;
+            END_IF
+        END_FOR
+   // swap the found minimum element with the first element
+    if(min_idx<>i){
+        swap(arr[min_idx],arr[i])}
+    END_FOR
+END
+ PROCEDURE playing_cards(VAR tab : ARRAY_OF INTEGER)
+VAR
+    i,j,min_idx,n : INTEGER;
+BE
